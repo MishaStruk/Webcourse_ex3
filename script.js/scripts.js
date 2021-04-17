@@ -44,9 +44,9 @@ function addNewBox(){
         addStar(addedBox);
     }
     addedBox.click(function(){
-        console.log($(this));
+        console.log(this);
         console.log($(".box")[0]);
-        if($(this) === $(".box")[0]){
+        if(this == $(".box")[0]){
             console.log("First box clicked");
             return;
         }
@@ -56,7 +56,6 @@ function addNewBox(){
         else{
             $(this).addClass("clickedBox");
         }
-        console.log($(this).has("img"));
     });
     addedBox.appendTo($(".mainContent")[0]);
 }
