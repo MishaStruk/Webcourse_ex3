@@ -1,6 +1,6 @@
 /*Global setting*/
 #wrapper {
-    width: 1000px; /* according to design's width*/
+    width: 100%; /* according to design's width*/
     margin: 0px auto;
 }
 * 
@@ -203,6 +203,109 @@ a:hover {
     bottom:0px;
 }
 
+/*Layout3.html setting*/
+.star{
+    position: absolute;
+    right:0;
+    top:0;
+    height:50px;
+    width:50px;
+}
+
+.clickedBox{
+    background-image: url("../images/back_image.png");
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+    background-color:white !important;
+}
+#addPic{
+    position:absolute;
+    left:115px;
+    top:130px;
+}
+#addPic:hover{
+    cursor:pointer
+}
+/*Layout 3 mobile setting*/
+@media only screen and (max-width:666px) {
+    #layout3 .index-nav {
+        background-color: #ff0000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #layout3 nav ul {
+        display: flex;
+        margin-left: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #layout3 nav ul li {
+        width: 233px;
+        height: 60px;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 16px;
+    }
+
+    #layout3 .mainContent{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #layout3 .box
+    {
+        height:345px;
+        width: 333px;
+        position:relative;
+    }
+}
+
+/*Layout 3 desktop setting*/
+@media only screen and (min-width:666px) {
+    #layout3 .index-nav {
+        background-color: #222222;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #layout3 nav ul {
+        display: flex;
+        margin-left: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #layout3 nav ul li {
+        width: 233px;
+        height: 60px;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 16px;
+    }
+
+    #layout3 .mainContent{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    #layout3 .box
+    {
+        height:345px;
+        width: 333px;
+        background-color: #111111;
+        position:relative;
+    }
+}
+    
 
 
 
