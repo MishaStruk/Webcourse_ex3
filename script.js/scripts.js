@@ -10,6 +10,29 @@ var COLORS = ['blue',
     '#FAA586',
     '#EB8CC6',
 ]
+function addNewBox(){
+    var addedBox = $("<div></div>");
+    addedBox.addClass("box");
+    addedBox.css("background-color", COLORS[Math.floor(Math.random() * COLORS.length)]);
+    if(($(".box").length+1) % 3 == 0){
+        addStar(addedBox);
+    }
+    addedBox.click(function(){
+        if(this == $(".box")[0]){
+            console.log("First box clicked");
+            return;
+        }
+        if($(this).hasClass("clickedBox")){
+            $(this).removeClass("clickedBox");
+            $(this).children().css("visibility","visible");
+        }
+        else{
+            $(this).addClass("clickedBox");
+            $(this).children().css("visibility","hidden");
+        }
+    });
+    addedBox.appendTo($(".mainContent")[0]);
+}
 
 function addStar(object) {
     var addedStar = $("<img/>");
@@ -26,45 +49,16 @@ function addPlus(object){
     addedPlus.attr('title', "plus");
     addedPlus.attr('id', "addPic");
     addedPlus.attr('src', "images/plus.png");
+    addedPlus.click(addNewBox);
     addedPlus.appendTo(object);
 }
-function boxClick(boxObject){
-    if($(this).hasClass("clickedBox")){
-        $(this).removeClass("clickedBox");
-    }
-    else{
-        $(this).addClass("clickedBox");
-    }
-}
-function addNewBox(){
-    var addedBox = $("<div></div>");
-    addedBox.addClass("box");
-    addedBox.css("background-color", COLORS[Math.floor(Math.random() * COLORS.length)]);
-    if(($(".box").length+1) % 3 == 0){
-        addStar(addedBox);
-    }
-    addedBox.click(function(){
-        console.log(this);
-        console.log($(".box")[0]);
-        if(this == $(".box")[0]){
-            console.log("First box clicked");
-            return;
-        }
-        if($(this).hasClass("clickedBox")){
-            $(this).removeClass("clickedBox");
-        }
-        else{
-            $(this).addClass("clickedBox");
-        }
-    });
-    addedBox.appendTo($(".mainContent")[0]);
-}
+
+
 function initialize() {
     for (i = 0; i < NUMBER_OF_FAMILY_LETTERS * 2; i++) {
         addNewBox();
     }
     divs = $('.box');
     addPlus($(divs[0]));
-    $(divs[0]).click(addNewBox);
 }
 (initialize());
