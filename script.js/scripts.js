@@ -9,26 +9,29 @@ var COLORS = ['blue',
     '#23BFAA',
     '#FAA586',
     '#EB8CC6',
+    '#8DB600',
+    '#FBCEB1',
+    '#89CFF0'
 ]
-function addNewBox(){
+function addNewBox() {
     var addedBox = $("<div></div>");
     addedBox.addClass("box");
     addedBox.css("background-color", COLORS[Math.floor(Math.random() * COLORS.length)]);
-    if(($(".box").length+1) % 3 == 0){
+    if (($(".box").length + 1) % 3 == 0) {
         addStar(addedBox);
     }
-    addedBox.click(function(){
-        if(this == $(".box")[0]){
+    addedBox.click(function () {
+        if (this == $(".box")[0]) {
             console.log("First box clicked");
             return;
         }
-        if($(this).hasClass("clickedBox")){
+        if ($(this).hasClass("clickedBox")) {
             $(this).removeClass("clickedBox");
-            $(this).children().css("visibility","visible");
+            $(this).children().css("visibility", "visible");
         }
-        else{
+        else {
             $(this).addClass("clickedBox");
-            $(this).children().css("visibility","hidden");
+            $(this).children().css("visibility", "hidden");
         }
     });
     addedBox.appendTo($(".mainContent")[0]);
@@ -43,7 +46,7 @@ function addStar(object) {
     addedStar.addClass("star");
     addedStar.appendTo(object);
 }
-function addPlus(object){
+function addPlus(object) {
     var addedPlus = $("<img/>");
     addedPlus.attr('alt', "plus");
     addedPlus.attr('title', "plus");
