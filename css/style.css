@@ -227,18 +227,19 @@ a:hover {
 #addPic:hover{
     cursor:pointer
 }
+#layout3 .index-nav {
+    background-color: #222222;
+}
+
+#layout3 nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: stretch;
+}
 /*Layout 3 mobile setting*/
 @media only screen and (max-width:666px) {
-    #layout3 .index-nav {
-        background-color: #222222;
-    }
-    
-    #layout3 nav ul {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-content: stretch;
-    }
+
     
     #layout3 nav ul li {
         width:222px;
@@ -265,20 +266,7 @@ a:hover {
 
 /*Layout 3 desktop setting*/
 @media only screen and (min-width:666px) {
-    #layout3 .index-nav {
-        background-color: #222222;
-        /* display: flex;
-        align-items: center;
-        justify-content: center; */
-    }
-    
-    #layout3 nav ul {
-        display: flex;
-        margin-left: 40px;
-        align-items: center;
-        justify-content: center;
-        align-content: stretch;
-    }
+
     
     #layout3 nav ul li {
         width: 233px;
